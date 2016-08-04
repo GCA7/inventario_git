@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
+    Route::get('/', ['as' => 'admin.index', function () {
+        return view('welcome');
+    }]);
+
     Route::resource('users','UsersController');
     Route::get('users/{id}/destroy', ['uses' =>
     'UsersController@destroy', 'as' =>
@@ -26,6 +30,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('categirues/{id}/destroy', ['uses' =>
     'CategoriesController@destroy', 'as' =>
     'admin.categories.destroy']);
+
+    Route::resource('tags', 'TagsController');
+    Route::get('tags/{id}/destroy', ['uses' =>
+    'TagsController@destroy', 'as' =>
+    'admin.tags.destroy']);
+
+    Route::resource('products', 'ProductsController');
 
 });
 
