@@ -12,12 +12,12 @@
 
       <div class="form-group">
           {!! Form::label('category_id', 'Categoria') !!}
-          {!! Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'Seleccione una opcion', 'required']) !!}
+          {!! Form::select('category_id', $categories, null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una opcion', 'required']) !!}
       </div>
 
       <div class="form-group">
           {!! Form::label('descripcion', 'Descripcion') !!}
-          {!! Form::textarea('descripcion', null, ['class' => 'form-control']) !!}
+          {!! Form::textarea('descripcion', null, ['class' => 'form-control textarea-desc']) !!}
       </div>
 
       <div class="form-group">
@@ -32,7 +32,7 @@
 
       <div class="form-group">
           {!! Form::label('tags', 'Tags') !!}
-          {!! Form::select('tags[]', $tags, null, ['class' => 'form-control', 'multiple', 'required']) !!}
+          {!! Form::select('tags[]', $tags, null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
       </div>
 
       <div class="form-group">
@@ -44,4 +44,22 @@
           {!! Form::submit('Agregar producto', ['class' => 'btn btn-primary']) !!}
       </div>
     {!! Form::close() !!}
+
+@endsection
+
+@section('js')
+<script>
+  $('.select-tag').chosen({
+      placeholder_text_multiple: 'Seleccione un maximo de 3 tags',
+      max_selected_options: 3,
+      search_contains: true,
+      no_results_text: 'No se encontraron estos tags'
+  });
+
+  $('.select-category').chosen({
+    placehoder_text_single: 'Seleccione una categoria'
+  });
+
+  $('.textarea-desc').trumbowyg();
+</script>
 @endsection

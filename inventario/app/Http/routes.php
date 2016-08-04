@@ -11,14 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Rutas del frontend
+Route::get('/', [
+      'as' => 'front.index',
+      'uses' => 'FrontController@index'
+]);
 
+
+
+//Rutas del panel de administracion
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/', ['as' => 'admin.index', function () {
-        return view('welcome');
+        return view('admin.index');
     }]);
 
     Route::resource('users','UsersController');
@@ -27,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     'admin.users.destroy']);
 
     Route::resource('categories', 'CategoriesController');
-    Route::get('categirues/{id}/destroy', ['uses' =>
+    Route::get('categories/{id}/destroy', ['uses' =>
     'CategoriesController@destroy', 'as' =>
     'admin.categories.destroy']);
 
@@ -37,6 +42,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     'admin.tags.destroy']);
 
     Route::resource('products', 'ProductsController');
+    Route::get('products/{id}/destroy', ['uses' =>
+    'ProductsController@destroy', 'as' =>
+    'admin.products.destroy']);
+
+    Route::get('image', [
+        'uses' => 'ImagesController@index',
+        'as' => 'admin.images.index'
+    ]);
 
 });
 
