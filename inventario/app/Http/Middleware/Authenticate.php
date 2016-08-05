@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class Authenticate
 {
+
+
+      protected $auth;
+
     /**
      * Handle an incoming request.
      *

@@ -17,10 +17,24 @@ Route::get('/', [
       'uses' => 'FrontController@index'
 ]);
 
+Route::get('categories/{name}', [
+    'uses' => 'FrontController@searchCategory',
+    'as' => 'front.search.category'
+]);
 
+Route::get('tags/{name}', [
+    'uses' => 'FrontController@searchTag',
+    'as' => 'front.search.tag'
+]);
+
+
+Route::get('products/{id}', [
+  'uses' =>'FrontController@viewProduct',
+  'as' => 'front.view.product'
+]);
 
 //Rutas del panel de administracion
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'admin'], function(){
 
     Route::get('/', ['as' => 'admin.index', function () {
         return view('admin.index');

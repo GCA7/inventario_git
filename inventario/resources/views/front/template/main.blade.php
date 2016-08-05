@@ -11,7 +11,7 @@
       <header>
       @include('front.template.partials.header')
       </header>
-      <div class="container">
+      <div class="container cont">
             @yield('content')
           <footer>
             <hr>

@@ -10,26 +10,30 @@
           <div class="col-md-6">
             <div class="panel panel-default">
               <div class="panel-body">
-                <a href="#" class="thumbnail">
+                <a href="{{ route('front.view.product', $product->slug) }}" class="thumbnail">
                 @foreach($product->images as $image)
                   <img class="img-responsive" src="{{ asset('img/products/'.$image->name) }}" alt="..." />
                 @endforeach
                 </a>
-                <h3 class="text-center">{{ $product->nombre }}</h3>
+                <a href="{{ route('front.view.product', $product->id) }}">
+                  <h4 class="text-center">{{ $product->nombre }}</h4>
+                </a>
                 <hr>
-                <i class="fa fa-folder-open-o"></i><a href="#">{{ $product->category->name }}</a>
+                <i class="fa fa-folder-open-o"></i><a href="{{ route('front.search.category', $product->category->name) }}">{{ $product->category->name }}</a>
                 <div class="pull-right">
-                  <i class="fa fa-clock-o"></i>Hace 3 minutos
+                  <i class="fa fa-clock-o"></i> {{ $product->created_at->diffForHumans() }}
                 </div>
               </div>
             </div>
           </div>
         @endforeach
       </div>
+    </div>
+  <div class="text-center">
+      {!! $products->render() !!}
   </div>
-
-</div>
-<div class="text-center">
-    {!! $products->render() !!}
+  <div class="col-md-4 aside">
+    @include('front.template.partials.aside')
+  </div>
 </div>
 @endsection()
