@@ -143,7 +143,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        Flash::erro('Se eliminado el producto exitosamente');
+        Flash::error('Se ha eliminado el producto exitosamente');
         return redirect()->route('admin.products.index');
     }
 }

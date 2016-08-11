@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('plugins/maincss/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/chosen/chosen.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/trumbowyg/ui/trumbowyg.css')}}">
+    <link rel="icon" type="image/png" href="{{asset('img/porvenir.ico')}}" />
   </head>
   <body class="admin-body container">
       @include('admin.template.partials.nav')
@@ -31,7 +32,6 @@
             </div>
           </div>
         </footer>
-
       <script src="{{asset('plugins/jquery/jquery-3.1.0.js')}}"></script>
       <script src="{{asset('plugins/bootstrap/js/bootstrap.js')}}"></script>
       <script src="{{asset('plugins/chosen/chosen.jquery.js')}}"></script>

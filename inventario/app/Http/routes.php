@@ -27,14 +27,33 @@ Route::get('tags/{name}', [
     'as' => 'front.search.tag'
 ]);
 
-
 Route::get('products/{id}', [
   'uses' =>'FrontController@viewProduct',
   'as' => 'front.view.product'
 ]);
 
+
+Route::resource('front/product', 'CarController');
+Route::post('car/store', ['uses' =>
+'CarController@store', 'as' =>
+'front.product.store']);
+
+
+Route::get('car', ['uses' =>
+'CarController@viewCar', 'as' =>
+'/viewCar']);
+
+
+Route::get('car/{id}/destroy', ['uses' =>
+'CarController@destroy', 'as' =>
+'front.car.destroy']);
+
+Route::get('car/{id}/deleteItem', ['uses' =>
+'CarController@deleteItem', 'as' =>
+'front.car.deleteItem']);
+
 //Rutas del panel de administracion
-Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/', ['as' => 'admin.index', function () {
         return view('admin.index');
@@ -66,6 +85,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'admin'], function(){
     ]);
 
 });
+
 
 Route::get('admin/auth/login', [
     'uses' => 'Auth\AuthController@getLogin',

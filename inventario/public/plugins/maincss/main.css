@@ -1,3 +1,55 @@
+body{
+    background-image: url('');
+    background-attachment: fixed;
+}
+
 .fondo-producto{
   background-color: white;
+}
+
+.parrafo{
+padding-top: 8px;
+}
+
+.input{
+float: left;
+}
+
+.bu{
+margin-top: 10%;
+color: lightgray;
+}
+
+.decoration{
+text-decoration: inherit;
+}
+
+.oc{
+    visibility: hidden;
+}
+
+.h1{
+  font-family: "Times New Roman", Times, serif;
+}
+
+.ac{
+    padding-top: 5%;
+    padding-right: 0%;
+}
+
+.img{
+    width: 60%;
+    margin-left: 25%;
+}
+
+.espacio{
+    padding-bottom:0%;
+}
+
+.face{
+width: 20%;
+}
+
+p.stock{
+color: green;
 }

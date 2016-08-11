@@ -1,6 +1,5 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -10,20 +9,21 @@
       </button>
       <img class="navbar-brand" title="El porvenir del productor" src="{{asset('/img/porvenir.ico')}}">
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       @if(Auth::user())
       <ul class="nav navbar-nav">
+        @if(Auth::user()->type === 'admin')
         <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
         <li><a href="{{ route('admin.categories.index') }}">Categorias</a></li>
         <li><a href="{{ route('admin.products.index') }}">Productos</a></li>
         <li><a href="{{ route('admin.images.index') }}">Imagenes</a></li>
         <li><a href="{{ route('admin.tags.index') }}">Tags</a></li>
+        @endif
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('front.index') }}" target="_blank"> Pagina Principal</a></li>
+        <li><a href="{{ route('/viewCar') }}" ><i title="Carrito de compras" class="glyphicon glyphicon-shopping-cart"></i></a></li>
+        <li><a href="{{ route('front.index') }}"> Inicio</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -32,6 +32,14 @@
         </li>
       </ul>
       @endif
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      @if(!Auth::user())
+      <ul class="nav navbar-nav">
+        <li><a href="{{ route('admin.auth.login') }}">Iniciar Sesion</a></li>
+        <li><a href="{{ route('admin.users.create') }}">Registarme</a></li>
+        <li><a href="{{ route('front.index') }}"> Inicio</a></li>
+        <li><h5 class="parrafo">Bienvenido debes iniciar sesion para poder comprar produtos</h5></li>
+      </ul>
+    @endif
+    </div>
+  </div>
 </nav>

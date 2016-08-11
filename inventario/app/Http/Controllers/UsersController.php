@@ -43,8 +43,8 @@ class UsersController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        Flash::success("Se ha registrado " . $user->name . " exitosamente");
-        return redirect()->route('admin.users.index');
+        Flash::success("Bienvenido al Porvenir del Productor, inicia sesion si deseas comprar productos");
+        return redirect('/');
     }
 
     /**
