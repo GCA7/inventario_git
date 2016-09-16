@@ -17,7 +17,7 @@
 
       <div class="form-group">
           {!! Form::label('descripcion', 'Descripcion') !!}
-          {!! Form::textarea('descripcion', $product->descripcion, ['class' => 'form-control textarea-desc']) !!}
+          {!! Form::textarea('descripcion', $product->descripcion, ['class' => 'form-control textarea-desc', 'id' => 'textarea-desc']) !!}
       </div>
 
       <div class="form-group">
@@ -55,6 +55,13 @@
     placehoder_text_single: 'Seleccione una categoria'
   });
 
-  $('.textarea-desc').trumbowyg();
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#textarea-desc').summernote({
+    height: 300,
+  })
+   })
 </script>
 @endsection
