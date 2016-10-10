@@ -34,4 +34,3 @@ class AddCarsTable extends Migration
       Schema::drop('cars');
   }
     }
-}

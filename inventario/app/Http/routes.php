@@ -17,7 +17,7 @@ Route::get('/', [
       'uses' => 'FrontController@index'
 ]);
 
-Route::group(['middleware' => 'auth'], function(){
+
   Route::get('categories/{name}', [
       'uses' => 'FrontController@searchCategory',
       'as' => 'front.search.category'
@@ -51,12 +51,12 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('car/{id}/deleteItem', ['uses' =>
   'CarController@deleteItem', 'as' =>
   'front.car.deleteItem']);
-});
+
 
 
 
 //Rutas del panel de administracion
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'admin'], function(){
 
     Route::get('/', ['as' => 'admin.index', function () {
         return view('admin.index');
