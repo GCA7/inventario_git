@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/maincss/main.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome-4.6.3/css/font-awesome.min.css') }}">
+    <link rel="icon" type="image/png" href="{{asset('img/libro.png')}}" />
   </head>
   <body>
       <header class="espacio">
-        @include('admin.template.partials.nav')
+        @include('front.template.partials.nav')
       </header>
       <div class="container cont">
             @include('flash::message')
