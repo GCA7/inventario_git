@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-
+    <div class="container ancho">
       {!! Form::open(['route' => 'admin.auth.login', 'method' => 'POST']) !!}
         <div class="form-group">
           {!! Form::label('email', 'Correo Electronico') !!}
@@ -15,8 +15,9 @@
           {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '*********']) !!}
         </div>
 
-        <div class="form-group">
+        <div class="form-group boto">
             {!! Form::submit('Acceder', ['class' => 'btn btn-primary']) !!}
         </div>
       {!! Form::close() !!}
+          </div>
 @endsection

@@ -85,7 +85,8 @@ class UsersController extends Controller
 
         Flash::warning('Se ha editado un usuario de forma correcta');
         return redirect()->route('admin.users.index');
-    }
+    }// Matches The "/admin/users" URL
+    });
 
     /**
      * Remove the specified resource from storage.

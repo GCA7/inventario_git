@@ -2,16 +2,10 @@
 
 @section('content')
 <div class="row">
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-title">
-        <h3 class="title-front text-center text-info">Articulos recientes</h3>
-        </div>
-        </div>
+  <div class="col-md-9">
         @foreach($products as $product)
-          <div class="row">
-          <div class="col-md-12">
-            <div class="panel div">
+          <div class="col-md-4 padding">
+            <div class="panel div alto">
               <div class="panel-body">
                 @foreach($product->images as $image)
                 <a href="{{ route('front.view.product', $product->id) }}">
@@ -21,21 +15,21 @@
                 <a href="{{ route('front.view.product', $product->id) }}">
                   <h4 class="text-center">{{ $product->nombre }}</h4>
                 </a>
-                <div class="parrafos">
+                <div class="">a
                   {!! $product->descripcion !!}
                 </div>
                 <hr>
+                <span>Leidas: {{ $product->cantidad }}</span>
                 <i class="fa fa-folder-open-o icono"></i><a href="{{ route('front.search.category', $product->category->name) }}">{{ $product->category->name }}</a>
                 <div class="pull-right">
-                  <i class="fa fa-clock-o icono"></i> {{ $product->created_at->diffForHumans() }} | by {{ $product->user->name }}
+                  <i class="fa fa-clock-o icono"></i> {{ $product->created_at->diffForHumans() }}
                 </div>
               </div>
             </div>
           </div>
-</div>
         @endforeach
     </div>
-  <div class="col-md-3 aside">
+      <div class="col-md-3 aside">
     @include('front.template.partials.aside')
   </div>
 </div>

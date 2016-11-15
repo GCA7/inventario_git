@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome-4.6.3/css/font-awesome.min.css') }}">
   </head>
   <body>
-      <header class="espacio container">
+      <header class="espacio">
         @include('admin.template.partials.nav')
       </header>
       <div class="container cont">
@@ -17,7 +17,7 @@
           <footer>
             <hr>
             Todos los derechos reservados &copy {{ date('Y') }}
-            <div class="pull-right">Blog</div>
+            <div class="pull-right">Universidad Técnica Nacional</div>
           </footer>
       </div>
       <script src="https://apis.google.com/js/platform.js" async defer></script>

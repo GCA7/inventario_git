@@ -3,6 +3,10 @@ body{
     background-attachment: fixed;
 }
 
+a{
+  text-decoration: none;
+}
+
 .fondo-producto{
   background-color: white;
 }
@@ -11,8 +15,20 @@ body{
 color: #37474f;
 }
 
+.ancho{
+  width: 25%;
+}
+
+.boto{
+  text-align: center;
+}
+
 .parrafo{
 padding-top: 8px;
+}
+
+.li:hover{
+  background-color: lightgray;
 }
 
 li:hover{
@@ -21,6 +37,10 @@ background-color: #37474f;
 
 .input{
 float: left;
+}
+
+.fon{
+  background-color: transparent;
 }
 
 .bu{
@@ -37,7 +57,7 @@ color: white;
 }
 
 .decoration{
-text-decoration: inherit;
+text-decoration: none;
 }
 
 .oc{
@@ -57,6 +77,7 @@ text-decoration: inherit;
     white-space:nowrap;
     overflow:hidden;
 }
+
 
 .alinear{
 text-align: center;

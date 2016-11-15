@@ -23,7 +23,6 @@
           @endforeach
         </div>
         <br>
-
             <div id="disqus_thread"></div>
       <script>
 

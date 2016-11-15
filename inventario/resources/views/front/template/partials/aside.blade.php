@@ -6,11 +6,11 @@
     <ul class="list-group">
      @foreach($categories as $category)
       <a class="decoration" href="{{ route('front.search.category', $category->name) }}">
-      <li class="list-group-item">
+      <li class="list-group-item li">
         <span class="badge">{{ $category->products->count() }}</span>
             {{ $category->name }}
       </li>
-</a>
+      </a>
      @endforeach
     </ul>
   </div>
@@ -30,4 +30,9 @@
   <ul>
     <div class="g-follow" data-annotation="none" data-height="24" data-href="//plus.google.com/u/0/103055285873957614867" data-rel="author"></div>
   </ul>
+</div>
+<div class="panel-heading">
+<div class="panel-body alinear">
+    <img class="img-responsive" src="{{ asset('img/utn.jpg') }}" alt="" />
+</div>
 </div>

@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div class="card">
     {!! Form::open(['route' => 'admin.users.store', 'method' => 'POST']) !!}
 
         <div class="form-group">
@@ -27,5 +28,5 @@
 
 
     {!! Form::close() !!}
-
+</div>
 @endsection
