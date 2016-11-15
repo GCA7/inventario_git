@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('plugins/maincss/main.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/chosen/chosen.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/font-awesome-4.6.3/css/font-awesome.css')}}">
-    <link rel="icon" type="image/png" href="{{asset('img/porvenir.ico')}}" />
+    <link rel="icon" type="image/png" href="{{asset('img/libro.png')}}" />
   </head>
   <body class="admin-body container">
       @include('admin.template.partials.nav')

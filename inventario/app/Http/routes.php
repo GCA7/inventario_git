@@ -52,9 +52,6 @@ Route::get('/', [
   'CarController@deleteItem', 'as' =>
   'front.car.deleteItem']);
 
-
-
-
 //Rutas del panel de administracion
 Route::group(['prefix' => 'admin'], function(){
 
