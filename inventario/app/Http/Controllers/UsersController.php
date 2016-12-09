@@ -43,7 +43,6 @@ class UsersController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
 
-        Flash::success("Bienvenido al Porvenir del Productor, inicia sesion si deseas comprar productos");
         return redirect('/');
     }
 
@@ -86,7 +85,7 @@ class UsersController extends Controller
         Flash::warning('Se ha editado un usuario de forma correcta');
         return redirect()->route('admin.users.index');
     }// Matches The "/admin/users" URL
-    
+
 
     /**
      * Remove the specified resource from storage.

@@ -26,8 +26,6 @@ class ProductRequest extends Request
         return [
           'nombre'      => 'min:8|max:250|required|unique:products',
           'category_id' => 'required',
-          'cantidad'    => 'required',
-          'precio'      => 'required',
           'image'       => 'image|required'
         ];
     }

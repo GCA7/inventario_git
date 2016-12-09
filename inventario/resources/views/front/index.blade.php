@@ -2,25 +2,25 @@
 
 @section('content')
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 ">
         @foreach($products as $product)
-          <div class="col-md-4 padding">
-            <div class="panel div alto">
+          <div class="textoContenido col-md-4">
+            <div class="panel div">
               <div class="panel-body">
                 @foreach($product->images as $image)
+                <div class="img">
                 <a href="{{ route('front.view.product', $product->id) }}">
-                  <img class="img-responsive" src="{{ asset('img/products/'.$image->name) }}" alt="Responsive image" />
+                  <img class="" src="{{ asset('img/products/'.$image->name) }}" alt="Responsive image" />
                 </a>
+                </div>
                 @endforeach
                 <a href="{{ route('front.view.product', $product->id) }}">
-                  <h4 class="text-center">{{ $product->nombre }}</h4>
+                  <p class="text-center">{{ $product->nombre }}</p>
                 </a>
-                <div class="">a
-                  {!! $product->descripcion !!}
+                <div>
+                    {!! $product->descripcion !!}
                 </div>
-                <hr>
-                <span>Leidas: {{ $product->cantidad }}</span>
-                <i class="fa fa-folder-open-o icono"></i><a href="{{ route('front.search.category', $product->category->name) }}">{{ $product->category->name }}</a>
+                <i class="fa fa-folder-open-o icono" style="color:orange"></i><a href="{{ route('front.search.category', $product->category->name) }}">{{ $product->category->name }}</a>
                 <div class="pull-right">
                   <i class="fa fa-clock-o icono"></i> {{ $product->created_at->diffForHumans() }}
                 </div>
@@ -36,4 +36,13 @@
 <div class="text-center">
     {!! $products->render() !!}
 </div>
+
+<style media="screen">
+p {
+   height: 50px;
+   overflow:      hidden;
+   white-space:   pre;
+   text-overflow: ellipsis;
+}
+</style>
 @endsection()

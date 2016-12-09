@@ -23,7 +23,7 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::Search($request->nombre)->orderBy('id', 'DESC')->paginate(5);
+        $products = Product::Search($request->nombre)->orderBy('id', 'DESC')->paginate(6);
         $products->each(function($products){
           $products->category;
           $products->user;
@@ -69,14 +69,12 @@ class ProductsController extends Controller
         $product->user_id = \Auth::user()->id;
         $product->save();
 
-        $product->tags()->sync($request->tags);
-
         $image = new Image();
         $image->name = $name;
         $image->product()->associate($product);
         $image->save();
 
-        Flash::success('Se ha creado el producto correctamente');
+        Flash::success('Se ha creado el libro correctamente');
         return redirect()->route('admin.products.index');
     }
 
@@ -102,15 +100,10 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->category;
         $categories = Category::orderBy('name', 'DESC')->lists('name', 'id');
-        $tags = Tag::orderBy('name', 'DESC')->lists('name', 'id');
-
-        $my_tags = $product->tags->lists('id')->ToArray();
 
         return view('admin.products.edit')->
                 with('categories',$categories)->
-                with('product', $product)->
-                with('tags', $tags)->
-                with('my_tags',$my_tags);
+                with('product', $product);
 
     }
 
@@ -127,8 +120,8 @@ class ProductsController extends Controller
         $product->fill($request->all());
         $product->save();
 
-        $product->tags()->sync($request->tags);
-        Flash::warning('Se ha editado el producto correctamente');
+
+        Flash::warning('Se ha editado el libro correctamente');
         return redirect()->route('admin.products.index');
     }
 

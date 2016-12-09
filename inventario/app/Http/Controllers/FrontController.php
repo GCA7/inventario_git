@@ -22,7 +22,7 @@ class FrontController extends Controller
 
     public function index(Request $request)
     {
-      $products = Product::Search($request->nombre)->orderBy('id', 'DESC')->paginate(5);
+      $products = Product::Search($request->nombre)->orderBy('id', 'DESC')->paginate(6);
       $products->each(function($products){
         $products->category;
         $products->images;
@@ -62,6 +62,7 @@ class FrontController extends Controller
       $product->user;
       $product->tags;
       $product->images;
+
 
       return view('front.product')->with('product', $product);
     }

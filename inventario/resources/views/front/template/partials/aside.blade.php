@@ -1,6 +1,6 @@
 <div class="panel div">
   <div class="panel-heading nav">
-    <h3 class="panel-title "><p class="p alinear">Categorias</p></h3>
+    <h3 class="panel-title "><h4 class="p alinear">Categorias</h4></h3>
   </div>
   <div class="panel-body">
     <ul class="list-group">
@@ -16,7 +16,7 @@
   </div>
 </div>
 <div class="panel-heading nav ">
-  <h3 class="panel-title "><p class="p alinear">Contáctenos</p></h3>
+  <h3 class="panel-title "><h4 class="p alinear">Contáctenos</h4></h3>
 </div>
 <div class="panel-body alinear div">
   <ul class="list-group">
@@ -24,12 +24,12 @@
   </ul>
   <hr>
   <ul>
-    <a href="http://sancarlos.utn.ac.cr/">Página sede San Carlos</a>
+    <a href="http://sancarlos.utn.ac.cr/" class="list-group">Página sede San Carlos</a>
   </ul>
   <hr>
   <ul>
-    <p>
-      Tel.: (506) 2460-6115
+    <p class="list-group">
+      Tel: (506) 2460-6115
       <hr>
       E-mail: infosancarlos@utn.ac.cr
     </p>

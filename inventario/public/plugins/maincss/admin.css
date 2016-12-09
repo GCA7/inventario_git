@@ -15,15 +15,6 @@ a{
 color: #37474f;
 }
 
-.fuen{
-  margin-right: 12px;
-}
-
-.centrar{
-  margin:0 auto 0 auto;
-  width: 80%;
-}
-
 .ancho{
   width: 25%;
 }
@@ -116,4 +107,3 @@ width: 20%;
 
 p.stock{
 color: green;
-}

@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Agregar producto')
+@section('title', 'Agregar libro')
 
 @section('content')
 
@@ -11,7 +11,7 @@
       </div>
 
       <div class="form-group">
-          {!! Form::label('category_id', 'Categoria') !!}
+          {!! Form::label('category_id', 'Categoria') !!}<br>
           {!! Form::select('category_id', $categories, null, ['class' => 'form-control select-category', 'placeholder' => 'Seleccione una opcion', 'required']) !!}
       </div>
 
@@ -22,27 +22,12 @@
       </div>
 
       <div class="form-group">
-          {!! Form::label('cantidad', 'Cantidad') !!}
-          {!! Form::text('cantidad', null, ['class' => 'form-control']) !!}
-      </div>
-
-      <div class="form-group">
-          {!! Form::label('precio', 'Precio') !!}
-          {!! Form::text('precio', null, ['class' => 'form-control']) !!}
-      </div>
-
-      <div class="form-group">
-          {!! Form::label('tags', 'Tags') !!}
-          {!! Form::select('tags[]', $tags, null, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
-      </div>
-
-      <div class="form-group">
           {!! Form::label('image', 'Imagen') !!}
           {!! Form::file('image') !!}
       </div>
 
       <div class="form-group">
-          {!! Form::submit('Agregar producto', ['class' => 'btn btn-primary']) !!}
+          {!! Form::submit('Agregar libro', ['class' => 'btn btn-primary']) !!}
       </div>
     {!! Form::close() !!}
 
@@ -64,7 +49,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('#textarea-desc').summernote({
+  $('#textarea-desc').trumbowyg({
     height: 300,
   })
    })

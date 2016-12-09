@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title', 'Editar producto ' . $product->nombre)
+@section('title', 'Editar libro ' . $product->nombre)
 
 @section('content')
 
@@ -21,22 +21,7 @@
       </div>
 
       <div class="form-group">
-          {!! Form::label('cantidad', 'Cantidad') !!}
-          {!! Form::text('cantidad', $product->cantidad, ['class' => 'form-control']) !!}
-      </div>
-
-      <div class="form-group">
-          {!! Form::label('precio', 'Precio') !!}
-          {!! Form::text('precio', $product->precio, ['class' => 'form-control']) !!}
-      </div>
-
-      <div class="form-group">
-          {!! Form::label('tags', 'Tags') !!}
-          {!! Form::select('tags[]', $tags, $my_tags, ['class' => 'form-control select-tag', 'multiple', 'required']) !!}
-      </div>
-
-      <div class="form-group">
-          {!! Form::submit('Editar producto', ['class' => 'btn btn-primary']) !!}
+          {!! Form::submit('Editar libro', ['class' => 'btn btn-primary']) !!}
       </div>
     {!! Form::close() !!}
 
@@ -59,7 +44,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('#textarea-desc').summernote({
+  $('#textarea-desc').trumbowyg({
     height: 300,
   })
    })
