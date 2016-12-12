@@ -24,6 +24,12 @@
         {!! Form::close() !!}
         @endif
       </ul>
+      {!! Form::open(['route' => 'front.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
+        <div class="input-group">
+          {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'Buscar libro...', 'aria-describedby' => 'search']) !!}
+          <span class="input-group-addon" id="search" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+        </div>
+      {!! Form::close() !!}
       <ul class="nav navbar-nav navbar-right a">
         <li><a href="{{ route('front.index') }}"><b class="p"> Inicio</b></a></li>
         <li class="dropdown nav a p">
